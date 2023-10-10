@@ -1,10 +1,10 @@
 all: main
 
-main: main.o answer.o convertTokenToInt.o userChoice.o readInput.o sum_before_and_after.o sum_between.o index_last_zero.o index_first_zero.o
-	gcc -o a.out main.o answer.o convertTokenToInt.o userChoice.o readInput.o sum_before_and_after.o sum_between.o index_last_zero.o index_first_zero.o
+main: menu.o answer.o convertTokenToInt.o userChoice.o readInput.o sum_before_and_after.o sum_between.o index_last_zero.o index_first_zero.o
+	gcc -o menu menu.o answer.o convertTokenToInt.o userChoice.o readInput.o sum_before_and_after.o sum_between.o index_last_zero.o index_first_zero.o
 
-main.o: main.c main.h answer.h convertTokenToInt.h userChoice.h readInput.h sum_before_and_after.h sum_between.h index_last_zero.h index_first_zero.h
-	gcc -c main.c
+main.o: menu.c menu.h answer.h convertTokenToInt.h userChoice.h readInput.h sum_before_and_after.h sum_between.h index_last_zero.h index_first_zero.h
+	gcc -c menu.c
 
 answer.o: answer.c answer.h
 	gcc -c answer.c
@@ -31,4 +31,4 @@ index_first_zero.o: index_first_zero.c index_first_zero.h
 	gcc -c index_first_zero.c
 
 clean:
-	rm -r *.o a.out -rf
+	rm -r *.o menu -rf
